@@ -1,0 +1,1 @@
+""" DRF AI Microservice """

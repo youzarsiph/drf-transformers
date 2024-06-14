@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "drf-transformers"
+version = "0.1.0"
+description = "AI microservice using Django, DRF and HuggingFace Transformers"
+authors = ["Yousuf Abu Shanab"]
+license = "MIT"
+readme = "README.md"
+packages = [{ include = "drf_transformers" }]
+homepage = "https://github.com/youzarsiph/drf-transformers/"
+repository = "https://github.com/youzarsiph/drf-transformers/"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+django = "^5.0.6"
+djangorestframework = "^3.15.1"
+drf-redesign = "^0.3.9"
+transformers = "4.41.2"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
