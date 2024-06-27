@@ -3,6 +3,8 @@
 [![Ruff Lint](https://github.com/youzarsiph/drf-transformers/actions/workflows/ruff.yml/badge.svg)](https://github.com/youzarsiph/drf-transformers/actions/workflows/ruff.yml)
 [![Black Format](https://github.com/youzarsiph/drf-transformers/actions/workflows/black.yml/badge.svg)](https://github.com/youzarsiph/drf-transformers/actions/workflows/black.yml)
 [![Django CI](https://github.com/youzarsiph/drf-transformers/actions/workflows/django.yml/badge.svg)](https://github.com/youzarsiph/drf-transformers/actions/workflows/django.yml)
+[![Docker](https://github.com/youzarsiph/drf-transformers/actions/workflows/docker-publish.yml/badge.svg)](https://github.com/youzarsiph/drf-transformers/actions/workflows/docker-publish.yml)
+[![Docker Image CI](https://github.com/youzarsiph/drf-transformers/actions/workflows/docker-image.yml/badge.svg)](https://github.com/youzarsiph/drf-transformers/actions/workflows/docker-image.yml)
 
 Django REST Framework AI microservice using Phi 3 from HuggingFace Hub
 
