@@ -9,8 +9,12 @@ from rest_framework.viewsets import GenericViewSet
 from transformers import pipeline
 from drf_transformers import serializers
 
-# Phi 3 Mini 4K Instruct model from HuggingFaceHub
-model = pipeline(task="chat-completion", model="microsoft/Phi-3-min-4k-instruct")
+# Phi 3 Mini 128K Instruct model from HuggingFace Hub
+model = pipeline(
+    "text-generation",
+    model="microsoft/Phi-3-mini-128k-instruct",
+    trust_remote_code=True,
+)
 
 
 # Create your views here.

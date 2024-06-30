@@ -9,19 +9,20 @@ ENV PYTHONDONTWRITEBYTECODE=1
 # Turns off buffering for easier container logging
 ENV PYTHONUNBUFFERED=1
 
-# Install pip requirements
+# Install pip requirements, create new Django project and configure the settings
 COPY requirements.txt .
-RUN python -m pip install -r requirements.txt
+RUN\
+    python -m pip install -r requirements.txt\
+    && python -m django startproject project
 
-# Create new Django project and configure the settings
-RUN python -m django startproject project
 COPY drf_transformers project/drf_transformers
-RUN echo "INSTALLED_APPS += ['drf_transformers', 'drf_redesign', 'rest_framework']" >> project/settings.py
-RUN echo "from django.urls import include" >> project/urls.py
-RUN echo "urlpatterns += [path('', include('drf_transformers.urls')), path('', include('rest_framework.urls'))]" >> project/urls.py
+RUN\
+    echo "INSTALLED_APPS += ['drf_transformers', 'drf_redesign', 'rest_framework']" >> project/settings.py\
+    && echo "from django.urls import include" >> project/urls.py\
+    && echo "urlpatterns += [path('', include('drf_transformers.urls')), path('', include('rest_framework.urls'))]" >> project/urls.py
 
-WORKDIR /app
 COPY . /app
+WORKDIR /app
 
 FROM gcr.io/distroless/python3
 COPY --from=build-env /app /app
